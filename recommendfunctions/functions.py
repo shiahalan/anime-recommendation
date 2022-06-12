@@ -17,6 +17,15 @@ def type_dictionary(lst):
             counter[type[0]] = [type]
     return counter
 
+def restaurant_dictionary(lst):
+    rest_dict = {}
+    for restaurant in lst:
+        if restaurant[0] not in rest_dict.keys():
+            rest_dict[restaurant[0]] = [restaurant[1:]]
+            continue
+        rest_dict[restaurant[0]] += [restaurant[1:]]
+    return rest_dict
+
 if __name__ == "__main__":
 
     print(type_dictionary(['german', 'japanese', 'vegetarian', 'french', 'african', 'american', 'barbecue', 'czech', 'chinese', 'thai',
