@@ -14,8 +14,13 @@ def main():
         else:
             break
 
-    print(f"Your options are: {type_choices}")
-
+    print(f"Your options are ", end="")
+    for i in range(len(type_choices)):
+        if i < len(type_choices) - 1:
+            print(type_choices[i], end=", ")
+            continue
+        print("and " + type_choices[i] + ".", end="\n")
+    
     type_choice = input("Which one would you like?\nEnter name: ").strip().lower()
     while True:
         if type_choice in type_choices:
@@ -28,8 +33,8 @@ def main():
 
     while True:
         if confirmation == 'y':
-            print(f"The {type_choice} restaurants are: ")
-            print(organized_restaurants[type_choice])
+            print(f"The {type_choice} restaurants are: ", end="\n\n")
+            display_restaurants(organized_restaurants[type_choice])
             while True:
                 search = input(" Would you like to continue your search?\ny/n: ").strip().lower()
                 if search == 'y':
@@ -50,5 +55,10 @@ def main():
             print("That was not an option.")
             confirmation = input(f"Would you like to view {type_choice} restaurants?\ny/n: ").strip().lower()
 
-print("Welcome to Codecademy Project Placeholder")
+print("""
+ __   ___  __  ___            __            ___     __   ___  __   __               ___       __       ___    __       
+|__) |__  /__`  |   /\  |  | |__)  /\  |\ |  |     |__) |__  /  ` /  \  |\/|  |\/| |__  |\ | |  \  /\   |  | /  \ |\ | 
+|  \ |___ .__/  |  /~~\ \__/ |  \ /~~\ | \|  |     |  \ |___ \__, \__/  |  |  |  | |___ | \| |__/ /~~\  |  | \__/ | \| 
+                                                                                                                       
+                                                                                                                       """)
 main()

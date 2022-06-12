@@ -26,6 +26,15 @@ def restaurant_dictionary(lst):
         rest_dict[restaurant[0]] += [restaurant[1:]]
     return rest_dict
 
+def display_restaurants(lst):
+    for restaurant in lst:
+        print("===========================================================", end="\n\n")
+        print(f"Name: {restaurant[0]}")
+        print(f"Price: {restaurant[1]} / 5")
+        print(f"Price: {restaurant[2]} / 5")
+        print(f"Address: {restaurant[3]}")
+    print("===========================================================", end="\n\n")
+
 if __name__ == "__main__":
 
     print(type_dictionary(['german', 'japanese', 'vegetarian', 'french', 'african', 'american', 'barbecue', 'czech', 'chinese', 'thai',
